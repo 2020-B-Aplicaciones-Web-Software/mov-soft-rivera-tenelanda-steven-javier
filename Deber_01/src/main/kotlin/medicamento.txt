@@ -1,0 +1,4 @@
+3,aspirina,100.20,oral,liquido,true,
+1,ibuprofeno,150.68,oral,comprimidos,true,
+4,paracetamol,300.6,oral,comprimidos,true,
+1,ibuprofeno,150.68,oral,comprimidos,false,

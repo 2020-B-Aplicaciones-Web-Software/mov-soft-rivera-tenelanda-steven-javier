@@ -1,0 +1,3 @@
+1,23/04/2021,Steven Rivera,24,Resfriado,tomar el medicamento cada 8 horas dutante 2 semanas,
+4,23/01/2020,Pablo Flores,18,Infeccion a la garganta,tomar el medicamento cada 6 horas durante 1 semana,
+5,20/06/2020,Julio Andrade,60,Gripe,tomar el medicamento cada 8 horas durante 2 semanas,
