@@ -2,6 +2,7 @@ package com.example.moviles_software_2021_a
 
 import android.os.Parcel
 import android.os.Parcelable
+import java.util.*
 
 class BEntrenador(
     val nombre: String?,
@@ -34,6 +35,8 @@ class BEntrenador(
             return arrayOfNulls(size)
         }
     }
+
+
 }
 
 

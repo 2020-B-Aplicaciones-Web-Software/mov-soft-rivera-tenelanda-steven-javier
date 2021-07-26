@@ -58,7 +58,75 @@ class ESqliteHelperUsuario (
             scriptConsultarUsuario,
             null
         )
+
+        val existeUsuario = resultaConsultaLectura.moveToFirst()
+
+        //CREAMOS UNA INSTANCIA PARA MAPEAR A LA BASE DE DATOS
+        val usuarioEncontrado = EUsuarioBDD(0,"","")
+        //val arregloUsuarios = arrayListOf<EUsuarioBDD>()
+        if (existeUsuario){
+
+            do {
+                val id = resultaConsultaLectura.getInt(0) //Columna indice 0 -> ID
+                val nombre = resultaConsultaLectura.getString(1) //Columna indice 1 -> Nombre
+                val descripcion = resultaConsultaLectura.getString(2) //Columna indice 2 ->DESCRIPCION
+
+                if (id != null){
+                    //arregloUsuarios.add(
+                    //    EUsuarioBDD(id, nombre, descripcion)
+                    //)
+                    usuarioEncontrado.id = id
+                    usuarioEncontrado.nombre = nombre
+                    usuarioEncontrado.descripcion = descripcion
+                }
+
+            } while (resultaConsultaLectura.moveToNext())
+        }
+        resultaConsultaLectura.close()
+        baseDatosLectura.close()
+        return usuarioEncontrado
     }
+
+    fun eliminarUsuarioFormulario(id: Int): Boolean {
+
+        val conexionEscritura = writableDatabase
+        val resultadoEliminacion = conexionEscritura
+            .delete(
+                "USUARIO", //Tabla
+                "id=?", //Clausula Where
+                arrayOf(
+                    id.toString(),
+                )//Arreglo ordenado de parametros
+            )
+        conexionEscritura.close()
+        return if (resultadoEliminacion == -1) false else true
+    }
+
+    fun actualizarUsuarioFormulario(
+        nombre: String,
+        descripcion: String,
+        idActualizar: Int
+    ): Boolean {
+        val conexionEscritura = writableDatabase
+
+        val valoresAActualizar = ContentValues()
+        valoresAActualizar.put("nombre", nombre)
+        valoresAActualizar.put("descripcion", descripcion)
+
+        val resultadoActualizacion = conexionEscritura
+            .update(
+                "USUARIO", //Nombre tabla
+                valoresAActualizar, //Valores a actualizar
+                "id=?", //Clausula Where
+                arrayOf(
+                    idActualizar.toString()
+                )//Parametros clausula Where
+            )
+        conexionEscritura.close()
+        return if (resultadoActualizacion == -1) false else true
+    }
+
+
 
 
 

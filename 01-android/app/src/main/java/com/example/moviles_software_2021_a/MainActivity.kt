@@ -16,6 +16,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val botonIrRecyclerView = findViewById<Button>(R.id.btn_ir_recycler_view)
+        botonIrRecyclerView
+            .setOnClickListener {
+                abrirActividadConParametros(GRecyclerView::class.java)
+            }
+
+        //Definimos el boton para el trabajo en clase
+        val botonIrTrabajoClase = findViewById<Button>(
+            R.id.btn_trabajo_clase
+        )
+        botonIrTrabajoClase
+            .setOnClickListener{
+                val intentExplicito = Intent(
+                    this,
+                    VistaRecetaMedica::class.java
+                )
+                startActivity(intentExplicito)
+            }
+
         val botonIrCicloVida = findViewById<Button>(
             //Buscar recursos
             R.id.btn_ir_ciclo_vida
@@ -48,6 +67,14 @@ class MainActivity : AppCompatActivity() {
                     ContactsContract.CommonDataKinds.Phone.CONTENT_URI //Solicitud
                 )
                 startActivityForResult(intentConRespuestaImplicito, CODIGO_RESPUESTA_INTENT_IMPLICITO)
+            }
+
+        val botonAbrirHttp = findViewById<Button>(
+            R.id.btn_ir_http
+        )
+        botonAbrirHttp
+            .setOnClickListener {
+                abrirActividadConParametros(HHttpActivity::class.java)
             }
 
     }
