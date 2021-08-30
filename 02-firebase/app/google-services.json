@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "534718105244",
+    "project_id": "movsoft-2021a-rivten",
+    "storage_bucket": "movsoft-2021a-rivten.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534718105244:android:010ac64f8d079369320f59",
+        "android_client_info": {
+          "package_name": "com.example.firebaseuno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534718105244-6kv7d07tg765uva5eq99kq36ud27aanl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr-K5QNO1MCMNFsoxroehcW6ovneIZffU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534718105244-6kv7d07tg765uva5eq99kq36ud27aanl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

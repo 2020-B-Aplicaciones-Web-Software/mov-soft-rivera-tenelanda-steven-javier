@@ -79,7 +79,7 @@ class VistaAmigosSteam : AppCompatActivity() {
             recyclerViewOnline
         )
 
-
+        //obtener la posicion del elemento en el recycler view
         val adapter = RecyclerViewAmigosJugando(this,listaJugadoresJugando,recyclerViewJugando
             )
         recyclerViewJugando.adapter = adapter
