@@ -30,10 +30,12 @@ class ActualizarMedicamento : AppCompatActivity() {
             val concentracion = findViewById<TextInputEditText>(R.id.input_actu_concentracion).text
             val forma_farmaceutica = findViewById<TextInputEditText>(R.id.input_actu_forma_farmaceutica).text
             val venta_libre = findViewById<TextInputEditText>(R.id.input_actu_venta_libre).text
+            val latitud = findViewById<TextInputEditText>(R.id.input_actu_latitud).text
+            val longitud = findViewById<TextInputEditText>(R.id.input_actu_longitud).text
 
             val toast = Toast.makeText(applicationContext, "", Toast.LENGTH_SHORT)
             if ((nombre_medicamento.toString() == "") or(concentracion.toString() == "")
-                or (forma_farmaceutica.toString() == "") or (venta_libre.toString() == "")){
+                or (forma_farmaceutica.toString() == "") or (venta_libre.toString() == "") or (latitud.toString()== "") or (longitud.toString() == "")){
                 toast.setText("Ingrese todos los campos")
                 toast.show()
             } else {
@@ -57,6 +59,8 @@ class ActualizarMedicamento : AppCompatActivity() {
                                 .whereEqualTo("concentracion", medicamento?.concentracion)
                                 .whereEqualTo("forma_farmaceutica", medicamento?.forma_farmaceutica)
                                 .whereEqualTo("venta_libre", medicamento?.venta_libre)
+                                .whereEqualTo("latitud", medicamento?.latitud)
+                                .whereEqualTo("longitud", medicamento?.longitud)
                                 .get()
                                 .addOnSuccessListener { resultado ->
                                     for (documento in resultado){
@@ -65,11 +69,15 @@ class ActualizarMedicamento : AppCompatActivity() {
                                         medicamento_referencia.update("concentracion", concentracion.toString().toDouble())
                                         medicamento_referencia.update("forma_farmaceutica", forma_farmaceutica.toString())
                                         medicamento_referencia.update("venta_libre", venta_libre.toString().toBoolean())
+                                        medicamento_referencia.update("latitud", latitud.toString().toDouble())
+                                        medicamento_referencia.update("longitud", longitud.toString().toDouble())
                                     }
                                     findViewById<TextInputEditText>(R.id.input_actu_nombre_medicamento).setText("")
                                     findViewById<TextInputEditText>(R.id.input_actu_concentracion).setText("")
                                     findViewById<TextInputEditText>(R.id.input_actu_forma_farmaceutica).setText("")
                                     findViewById<TextInputEditText>(R.id.input_actu_venta_libre).setText("")
+                                    findViewById<TextInputEditText>(R.id.input_actu_latitud).setText("")
+                                    findViewById<TextInputEditText>(R.id.input_actu_longitud).setText("")
                                     toast.setText("El medicamento se actualizo correctamente")
                                     toast.show()
                                 }

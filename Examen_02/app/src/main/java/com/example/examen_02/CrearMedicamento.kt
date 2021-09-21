@@ -30,10 +30,13 @@ class CrearMedicamento : AppCompatActivity() {
         val concentracion = findViewById<TextInputEditText>(R.id.input_concentracion).text
         val forma_farmaceutica = findViewById<TextInputEditText>(R.id.input_forma_farmaceutica).text
         val venta_libre = findViewById<TextInputEditText>(R.id.input_venta_libre).text
+        val latitud = findViewById<TextInputEditText>(R.id.input_latitud).text
+        val longitud = findViewById<TextInputEditText>(R.id.input_longitud).text
 
 
         val toast = Toast.makeText(applicationContext, "", Toast.LENGTH_SHORT)
-        if ((nombre_medicamento.toString() == "") or(concentracion.toString() == "") or (forma_farmaceutica.toString() == "") or (venta_libre.toString() == "")){
+        if ((nombre_medicamento.toString() == "") or(concentracion.toString() == "")
+            or (forma_farmaceutica.toString() == "") or (venta_libre.toString() == "") or (latitud.toString() == "") or (longitud.toString() == "")){
             toast.setText("Ingrese todos los campos")
             toast.show()
         } else {
@@ -41,7 +44,9 @@ class CrearMedicamento : AppCompatActivity() {
                 "nombre_medicamento" to nombre_medicamento.toString(),
                 "concentracion" to concentracion.toString().toDouble(),
                 "forma_farmaceutica" to forma_farmaceutica.toString(),
-                "venta_libre" to venta_libre.toString().toBoolean()
+                "venta_libre" to venta_libre.toString().toBoolean(),
+                "latitud" to latitud.toString().toDouble(),
+                "longitud" to longitud.toString().toDouble()
             )
 
             val db = Firebase.firestore
@@ -64,6 +69,8 @@ class CrearMedicamento : AppCompatActivity() {
                                 concentracion?.clear()
                                 forma_farmaceutica?.clear()
                                 venta_libre?.clear()
+                                latitud?.clear()
+                                longitud?.clear()
                                 toast.setText("Medicamento creado exitosamente")
                                 toast.show()
                             }

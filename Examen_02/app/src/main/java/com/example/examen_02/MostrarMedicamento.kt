@@ -18,7 +18,7 @@ class MostrarMedicamento : AppCompatActivity() {
     var arregloMedicamentos1 = ArrayList<Medicamento>()
     var id_seleccionado = -1
     var CODIGO_RESPUESTA_INTENT_EXPLICITO = 403
-    var receta_medica = RecetaMedica("",0,"","",null)
+    var receta_medica = RecetaMedica("",0,"","")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,7 +73,9 @@ class MostrarMedicamento : AppCompatActivity() {
                                 val concentracion = "${documento.data.get("concentracion")}"
                                 val forma_farmaceutica = "${documento.data.get("forma_farmaceutica")}"
                                 val venta_libre = "${documento.data.get("venta_libre")}"
-                                val MedicamentoCargado = Medicamento(nombre_medicamento, concentracion.toDouble(),forma_farmaceutica, venta_libre.toBoolean())
+                                val latitud = "${documento.data.get("latitud")}"
+                                val longitud = "${documento.data.get("longitud")}"
+                                val MedicamentoCargado = Medicamento(nombre_medicamento, concentracion.toDouble(),forma_farmaceutica, venta_libre.toBoolean(), latitud.toDouble(), longitud.toDouble())
                                 arreglo_medicamentos.add(MedicamentoCargado)
                             }
 
@@ -143,6 +145,8 @@ class MostrarMedicamento : AppCompatActivity() {
                                         .whereEqualTo("concentracion", arregloMedicamentos1[id_seleccionado].concentracion)
                                         .whereEqualTo("forma_farmaceutica", arregloMedicamentos1[id_seleccionado].forma_farmaceutica)
                                         .whereEqualTo("venta_libre", arregloMedicamentos1[id_seleccionado].venta_libre)
+                                        .whereEqualTo("latitud", arregloMedicamentos1[id_seleccionado].latitud)
+                                        .whereEqualTo("longitud", arregloMedicamentos1[id_seleccionado].longitud)
                                         .get()
                                         .addOnSuccessListener { resultado ->
                                             for (documento in resultado){
@@ -165,6 +169,10 @@ class MostrarMedicamento : AppCompatActivity() {
 
                 return true
             }
+            R.id.mi1_mapa -> {
+                irMapa()
+                return true
+            }
             else -> super.onContextItemSelected(item)
         }
     }
@@ -178,6 +186,15 @@ class MostrarMedicamento : AppCompatActivity() {
         editarMedicamentoForm.putExtra("MEDICAMENTO", arregloMedicamentos1[id_seleccionado])
         editarMedicamentoForm.putExtra("RECETA_MEDICA_SELECCIONADA", receta_medica)
         startActivityForResult(editarMedicamentoForm, CODIGO_RESPUESTA_INTENT_EXPLICITO)
+    }
+    fun irMapa(){
+        val Mapa = Intent(
+            this,
+            Mapa::class.java
+        )
+        Mapa.putExtra("MEDICAMENTO", arregloMedicamentos1[id_seleccionado])
+        Mapa.putExtra("RECETA_MEDICA_SELECCIONADA", receta_medica)
+        startActivityForResult(Mapa, CODIGO_RESPUESTA_INTENT_EXPLICITO)
     }
 
 

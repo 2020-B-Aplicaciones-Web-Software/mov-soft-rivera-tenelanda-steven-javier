@@ -57,7 +57,7 @@ class MostrarRecetaMedica : AppCompatActivity() {
                     val edad = "${document.data.get("edad")}"
                     val diagnostico = "${document.data.get("diagnostico")}"
                     val frecuencia = "${document.data.get("frecuencia_duracion_tratamiento")}"
-                    val RecetaMedicaCargada = RecetaMedica(nombre_paciente,edad.toInt(),diagnostico,frecuencia,null)
+                    val RecetaMedicaCargada = RecetaMedica(nombre_paciente,edad.toInt(),diagnostico,frecuencia)
                     arregloRecetasMedicas.add(RecetaMedicaCargada)
                 }
 

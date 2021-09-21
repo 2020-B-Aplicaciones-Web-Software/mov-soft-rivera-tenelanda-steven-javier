@@ -148,14 +148,17 @@ class MainActivity : AppCompatActivity() {
     fun setearBienvenida(){
         val textViewBienvenida = findViewById<TextView>(R.id.tv_bienvenida)
         val botonLogin = findViewById<Button>(R.id.btn_login)
+        val botonRecetasMedicas = findViewById<Button>(R.id.btn_mostrar_recetas)
 
         if (BAuthUsuario.usuario != null){
             textViewBienvenida.text = "Bienvenido ${BAuthUsuario.usuario?.email}"
             botonLogin.visibility = View.INVISIBLE
+            botonRecetasMedicas.visibility = View.VISIBLE
 
         }else {
             textViewBienvenida.text = "Ingresa al aplicativo"
             botonLogin.visibility = View.VISIBLE
+            botonRecetasMedicas.visibility = View.INVISIBLE
 
         }
     }

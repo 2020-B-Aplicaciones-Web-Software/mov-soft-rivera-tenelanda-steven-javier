@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FMapsActivity">
+    tools:context=".Mapa">
 
     <fragment
         android:id="@+id/map"
@@ -19,15 +19,16 @@
         app:layout_constraintVertical_bias="0.598"
         tools:context=".MapsFragment" />
 
-    <Button
-        android:id="@+id/btn_ir_carolina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Carolina"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="313dp"
+        android:layout_height="42dp"
+        android:text="Puede retirar los medicamentos en la ubicación mostrada en el mapa."
+        app:layout_constraintBottom_toTopOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="@+id/map"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/map"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.027" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,16 +8,13 @@ class RecetaMedica (
     var edad: Int,
     var diagnostico: String?,
     var frecuencia_duracion_tratamiento: String?,
-    var medicamentos: ArrayList<Medicamento>?
     ): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readInt(),
         parcel.readString(),
         parcel.readString(),
-        arrayListOf<Medicamento>().apply {
-            parcel.readList(this,Medicamento::class.java.classLoader)
-        }
+
     ) {
     }
 
@@ -26,7 +23,7 @@ class RecetaMedica (
         parcel.writeInt(edad)
         parcel.writeString(diagnostico)
         parcel.writeString(frecuencia_duracion_tratamiento)
-        parcel.writeList(medicamentos)
+
     }
 
     override fun describeContents(): Int {
