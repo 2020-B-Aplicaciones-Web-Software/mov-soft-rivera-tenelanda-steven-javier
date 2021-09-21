@@ -21,7 +21,7 @@ class VistaMedicamento : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vista_medicamento)
-
+        mostrarMedicamentosListView()
         val receta_medica_seleccionada = intent.getParcelableExtra<RecetaMedica>("RECETASELECCIONADA")
         if (receta_medica_seleccionada != null) {
             receta_medica = receta_medica_seleccionada
@@ -45,8 +45,7 @@ class VistaMedicamento : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if(receta_medica != null)
-            mostrarMedicamentosListView()
+        mostrarMedicamentosListView()
     }
 
     fun mostrarMedicamentosListView() {

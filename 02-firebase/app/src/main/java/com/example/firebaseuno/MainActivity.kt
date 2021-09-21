@@ -36,6 +36,35 @@ class MainActivity : AppCompatActivity() {
         botonProducto.setOnClickListener {
             irProducto()
         }
+
+        val botonRestaurante = findViewById<Button>(R.id.btn_restaurante)
+        botonRestaurante.setOnClickListener {
+            val intent = Intent(
+                this,
+                DRestaurante::class.java
+            )
+            startActivity(intent)
+        }
+
+        val botonOrdenes = findViewById<Button>(R.id.btn_ordenes)
+        botonOrdenes.setOnClickListener {
+            val intent = Intent(
+                this,
+                EOrdenes::class.java
+            )
+            startActivity(intent)
+        }
+
+        val botonMapa = findViewById<Button>(R.id.btn_ir_mapa)
+        botonMapa.setOnClickListener {
+            val intent = Intent(
+                this,
+                FMapsActivity::class.java
+            )
+            startActivity(intent)
+        }
+
+
     }
 
     fun irProducto(){
@@ -45,6 +74,9 @@ class MainActivity : AppCompatActivity() {
         )
         startActivity(intent)
     }
+
+
+
 
     fun llamarLoginUsuario(){
         val providers = arrayListOf(
@@ -160,16 +192,22 @@ class MainActivity : AppCompatActivity() {
         val botonLogin = findViewById<Button>(R.id.btn_login)
         val botonSalir = findViewById<Button>(R.id.btn_salir)
         val botonProducto = findViewById<Button>(R.id.btn_producto)
+        val botonRestaurante = findViewById<Button>(R.id.btn_restaurante)
+        val botonOrdenes = findViewById<Button>(R.id.btn_ordenes)
         if (BAuthUsuario.usuario != null){
             textViewBienvenida.text = "Bienvenido ${BAuthUsuario.usuario?.email}"
             botonLogin.visibility = View.INVISIBLE
             botonSalir.visibility = View.VISIBLE
             botonProducto.visibility = View.VISIBLE
+            botonRestaurante.visibility = View.VISIBLE
+            botonOrdenes.visibility = View.VISIBLE
         }else {
             textViewBienvenida.text = "Ingresa al aplicativo"
             botonLogin.visibility = View.VISIBLE
             botonSalir.visibility = View.INVISIBLE
             botonProducto.visibility = View.INVISIBLE
+            botonRestaurante.visibility = View.INVISIBLE
+            botonOrdenes.visibility = View.INVISIBLE
         }
     }
 
