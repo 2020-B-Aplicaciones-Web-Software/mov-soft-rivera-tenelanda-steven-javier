@@ -29,7 +29,9 @@ class CrearRecetaMedica : AppCompatActivity() {
         val frecuencia_duracion_tratamiento = findViewById<TextInputEditText>(R.id.input_frecuencia_duracion).text
 
         val toast = Toast.makeText(applicationContext, "", Toast.LENGTH_SHORT)
-        if ((nombre.toString() == "") or(edad.toString() == "") or (diagnostico.toString() == "") or (frecuencia_duracion_tratamiento.toString() == "")){
+        if ((nombre.toString() == "") or(edad.toString() == "")
+            or (diagnostico.toString() == "")
+            or (frecuencia_duracion_tratamiento.toString() == "")){
             toast.setText("Ingrese todos los campos")
             toast.show()
         } else {

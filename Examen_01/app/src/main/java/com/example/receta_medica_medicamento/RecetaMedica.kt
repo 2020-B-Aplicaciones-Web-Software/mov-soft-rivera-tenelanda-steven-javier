@@ -23,6 +23,7 @@ class RecetaMedica (
             parcel.readList(this,Medicamento::class.java.classLoader)
         }
 
+
     ) {
     }
 

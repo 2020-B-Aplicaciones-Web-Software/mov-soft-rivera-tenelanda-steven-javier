@@ -20,6 +20,8 @@ class ActualizarMedicamento : AppCompatActivity() {
             findViewById<TextInputEditText>(R.id.input_actu_concentracion).setText(medicamento.concentracion.toString())
             findViewById<TextInputEditText>(R.id.input_actu_forma_farmaceutica).setText(medicamento.forma_farmaceutica)
             findViewById<TextInputEditText>(R.id.input_actu_venta_libre).setText(medicamento.venta_libre.toString())
+            findViewById<TextInputEditText>(R.id.input_actu_latitud).setText(medicamento.latitud.toString())
+            findViewById<TextInputEditText>(R.id.input_actu_longitud).setText(medicamento.longitud.toString())
         }
         val boton_actualizar_medicamento = findViewById<Button>(
             R.id.btn_actualizar_medicamento_formulario

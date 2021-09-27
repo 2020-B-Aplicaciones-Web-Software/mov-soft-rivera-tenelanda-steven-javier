@@ -102,6 +102,7 @@ class MostrarRecetaMedica : AppCompatActivity() {
                 return true
             }
             R.id.mi_eliminar -> {
+                mostrarRecetaMedica()
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Receta Medica")
                 builder.setMessage("Desea elminar la receta medica seleccionada")
