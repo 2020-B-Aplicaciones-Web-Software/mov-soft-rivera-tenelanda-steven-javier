@@ -26,14 +26,13 @@ class MostrarResenias : AppCompatActivity() {
                 )
                 intent.putExtra("CLINICA",clinica)
                 startActivityForResult(intent, CODIGO_RESPUESTA_INTENT_EXPLICITO)
-
         }
 
     }
 
     override fun onResume() {
         super.onResume()
-        mostrarClinicas()
+
     }
 
 

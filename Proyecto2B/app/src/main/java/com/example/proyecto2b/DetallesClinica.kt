@@ -59,8 +59,5 @@ class DetallesClinica : AppCompatActivity() {
         val listViewClinicas = findViewById<ListView>(R.id.lv_servicios)
         registerForContextMenu(listViewClinicas)
         listViewClinicas.adapter = adaptador
-
-
-
     }
 }
