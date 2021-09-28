@@ -40,6 +40,7 @@ class VistaChatSteam : AppCompatActivity() {
                     Jugador(jugador_jugando.nickname.toString(), "",jugador_jugando.url_imagen.toString(), "Quieres jugar Warface conmigo?")
                 )
 
+
             val recyclerViewChatJugando = findViewById<RecyclerView>(
                 R.id.recyclerViewChatJugando
             )
