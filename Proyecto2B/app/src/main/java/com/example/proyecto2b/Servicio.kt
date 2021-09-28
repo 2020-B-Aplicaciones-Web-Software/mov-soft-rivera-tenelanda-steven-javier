@@ -32,4 +32,9 @@ class Servicio (
         }
     }
 
+    override fun toString(): String {
+        return "${nombre_servicio}: $${costo_servicio}"
+
+    }
+
 }

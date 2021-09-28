@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto2B">
-        <activity android:name=".MostrarResenias"></activity>
+        <activity android:name=".EscribirResenia"></activity>
+        <activity android:name=".DetallesClinica" />
+        <activity android:name=".MostrarClinica" />
+        <activity android:name=".MostrarResenias" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

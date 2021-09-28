@@ -109,5 +109,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val botonMostrarClinicas = findViewById<Button>(R.id.btn_mostrar_clinicas)
+        botonMostrarClinicas.setOnClickListener {
+            val intent = Intent(
+                this,
+                MostrarClinica::class.java
+            )
+            startActivity(intent)
+        }
+
+
     }
 }
