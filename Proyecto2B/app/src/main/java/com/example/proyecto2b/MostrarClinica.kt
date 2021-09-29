@@ -90,7 +90,7 @@ class MostrarClinica : AppCompatActivity() {
                         novedades,
                         latitud.toDouble(),
                         longitud.toDouble(),
-                        ReseniaEvaluacion(num_5.toInt(),num_4.toInt(),num_3.toInt(),num_2.toInt(),num_1.toInt(),promedio.toInt(),num_resenias.toInt()),
+                        ReseniaEvaluacion(num_5.toInt(),num_4.toInt(),num_3.toInt(),num_2.toInt(),num_1.toInt(),promedio.toDouble(),num_resenias.toInt()),
                         HorariosAtencion(lunes,martes,miercoles,jueves,viernes,sabado,domingo),
                         arregloServicios
                     )

@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             val novedades = "Corte de pelo 2x1 los dias lunes"
             val latitud = -45.234234234
             val longitud = -45.293849234
-            val resenias = ReseniaEvaluacion(0,0,0,0,0,0,0)
+            val resenias = ReseniaEvaluacion(0,0,0,0,0,0.0,0)
             val horarios_atencion = HorariosAtencion("10:00-17:00","10:00-17:00","10:00-17:00","10:00-17:00","10:00-17:00","Cerrado","Cerrado")
             val servicios = arrayListOf<Servicio>(
                 Servicio("Vacunas", 15.00),
